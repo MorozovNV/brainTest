@@ -10,7 +10,7 @@ public class Main {
 
         System.out.println("Computer: Lets fun! Are you ready? y/n");
         if(sc.nextLine().equals("n")) {
-            System.out.println("Fuck you, bitch");
+            System.out.println("Computer: Fuck you, bitch");
             return;
         }
 
