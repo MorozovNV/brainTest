@@ -9,7 +9,10 @@ public class Main {
         Thread.sleep(1000);
 
         System.out.println("Computer: Lets fun! Are you ready? y/n");
-        if(sc.nextLine().equals("n")) return;
+        if(sc.nextLine().equals("n")) {
+            System.out.println("Fuck you, bitch");
+            return;
+        }
 
         String g = "";
         while(true) {
