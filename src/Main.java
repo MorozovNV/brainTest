@@ -15,6 +15,8 @@ public class Main {
         }
 
         String g = "";
+        String[] numbers = new String[9];
+
         while(true) {
             System.out.print("1000");
             Thread.sleep(1000);
