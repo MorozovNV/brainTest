@@ -22,6 +22,7 @@ public class Main {
         ArrayList<String> numbers = new ArrayList<>();
         ArrayList<Integer> counterNumbers = new ArrayList<Integer>();
         ArrayList<Integer> counterAnswers = new ArrayList<Integer>();
+        int[] listControl = {0,1,2,3,4,6,7,5,8,5,7,4,8,8,7,5,6,8,4,8,3,2,6,0};
 
         for(int i=0;i<9;i++) numbers.add(String.format("%d",(int) Math.pow(10.0, (double) i)));
         for(int i=0;i<9;i++) counterNumbers.add(0);
@@ -30,11 +31,42 @@ public class Main {
         System.out.println(numbers);
         System.out.println(counterNumbers);
         System.out.println(counterAnswers);
+        System.out.println();
 
         for (int i=0; i<numbers.get(8).length(); i++) System.out.print(numbers.get(8).charAt(i)+" ");
+        System.out.println();
+
+        System.out.println("Computer: Ќапишите число или команду d-done");
+        Thread.sleep(1000);
+        System.out.println("Computer: GO!");
+        Thread.sleep(2000);
+
+        for(int i=0; i<listControl.length;i++){
+            System.out.print(numbers.get(listControl[i]));
+            counterNumbers.set(listControl[i], counterNumbers.get(listControl[i])+1);
+            Thread.sleep(1000);
+            for (int j=0; j<numbers.get(listControl[i]).length();j++)  System.out.print("\b");
+            System.out.println();
+
+            g = sc.nextLine();
+            if(g.equals("d")) break;
+            if(g.equals(String.valueOf(listControl[i]))) counterAnswers.set(listControl[i], counterAnswers.get(listControl[i])+1);
+
+        }
+
+        System.out.println("counterNumbers: " + counterNumbers);
+        System.out.println("counterAnswerss: " + counterAnswers);
+
+
+    }
+
+
+}
+
+/* верси€ с рандомом
         int f = 0;
-        while(f<50) {
-            int randNum = (int) (Math.random()*(9)-1); // [0,9) or [0,8]
+       while(f<50) {
+            int randNum = (int) (Math.random()*(10)-1); // [0,9) or [0,8]
             counterNumbers.set(randNum, counterNumbers.get(randNum)+1);
             //System.out.print("\b\b\b\b");
 
@@ -44,11 +76,4 @@ public class Main {
             if(g.equals("d")) break;
             f++;
             //comment
-        }
-        System.out.println(counterNumbers);
-
-    }
-
-
-}
-
+        }*/
