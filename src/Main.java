@@ -1,22 +1,30 @@
-import javax.swing.*;
-import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException, IOException {
+
+    public static void outResult(ArrayList<String> number,ArrayList<Integer> cN,ArrayList<Integer> cA){
+        System.out.println("Число" + " | " + "Кол. показываний" + " | " + "Кол. правильных ответов" + " | " + "В процентах " + "%" );
+        for (int i=0; i<number.size();i++) {
+            System.out.print(number.get(i));
+            for (
+            + " | " + cN.get(i) + " | " + cA.get(i) + " | " + (cA.get(i)*100)/cN.get(i) + "%" );
+        }
+    }
+
+    public static void main(String[] args) throws InterruptedException {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Computer: Hello");
-        Thread.sleep(1000);
-
-       /* System.out.println("Computer: Lets fun! Are you ready? y/n");
+        Thread.sleep(2000);
+        System.out.println("Computer: Напишите количество нулей в числе, которое увидите или команду d-done");
+        Thread.sleep(3000);
+        System.out.println("Computer: Lets fun! Are you ready? y/n");
         if(sc.nextLine().equals("n")) {
             System.out.println("Computer: Fuck you, bitch");
             return;
-        }*/
+        }
 
         String g = "";
         ArrayList<String> numbers = new ArrayList<>();
@@ -28,16 +36,6 @@ public class Main {
         for(int i=0;i<9;i++) counterNumbers.add(0);
         for(int i=0;i<9;i++) counterAnswers.add(0);
 
-        System.out.println(numbers);
-        System.out.println(counterNumbers);
-        System.out.println(counterAnswers);
-        System.out.println();
-
-        for (int i=0; i<numbers.get(8).length(); i++) System.out.print(numbers.get(8).charAt(i)+" ");
-        System.out.println();
-
-        System.out.println("Computer: Напишите число или команду d-done");
-        Thread.sleep(1000);
         System.out.println("Computer: GO!");
         Thread.sleep(2000);
 
@@ -54,14 +52,12 @@ public class Main {
 
         }
 
-        System.out.println("counterNumbers: " + counterNumbers);
-        System.out.println("counterAnswerss: " + counterAnswers);
-
+        outResult(numbers, counterNumbers, counterAnswers);
 
     }
-
-
 }
+
+
 
 /* версия с рандомом
         int f = 0;
@@ -77,3 +73,13 @@ public class Main {
             f++;
             //comment
         }*/
+
+/*
+* System.out.println(numbers);
+        System.out.println(counterNumbers);
+        System.out.println(counterAnswers);
+        System.out.println();
+
+        for (int i=0; i<numbers.get(8).length(); i++) System.out.print(numbers.get(8).charAt(i)+" ");
+        System.out.println();
+* */
