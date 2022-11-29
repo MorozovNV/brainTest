@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="brainTest:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/brainTest_jar</output-path>
+    <root id="archive" name="brainTest.jar">
+      <element id="module-output" name="brainTest" />
+      <element id="extracted-dir" path="$USER_HOME$/OneDrive/Рабочий стол/Java/library for java download/jfreechart-1.0.19/lib/jcommon-1.0.23.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/OneDrive/Рабочий стол/Java/library for java download/jfreechart-1.0.19/lib/jfreechart-1.0.19.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -1,15 +1,49 @@
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 
+    public static void control(){
+        Scanner sc = new Scanner(System.in);
+        int langForHelp = 0;
+        while(true){
+            outHelp(langForHelp);
+            var g = sc.nextLine();
+            if(g.equals("e")) break;
+
+            switch (g) {
+                case ("h"):
+                    break;
+                case("g"): gamesControl();
+                    break;
+                default:
+                    System.out.println("Нет такой команды, по крайней мере пока. Читай че написано:");
+                    break;
+            }
+        }
+    }
+
+    public static void outHelp(int lg){
+        System.out.println("Список команд: h-help, g-games, e-esc, ");
+    }
+
+    public static void gamesControl(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Выберети игру: 1-игра с нулями \n");
+    }
+
     public static void outResult(ArrayList<String> number,ArrayList<Integer> cN,ArrayList<Integer> cA){
         System.out.println("Число" + " | " + "Кол. показываний" + " | " + "Кол. правильных ответов" + " | " + "В процентах " + "%" );
+        double a = 0;
         for (int i=0; i<number.size();i++) {
             System.out.print(number.get(i));
-            for (
-            + " | " + cN.get(i) + " | " + cA.get(i) + " | " + (cA.get(i)*100)/cN.get(i) + "%" );
+            for (int j=0;j<(number.size()-number.get(i).length());j++){
+                System.out.print(" ");
+            }
+            if (cA.get(i)==0) a=0;
+            else a=(cA.get(i)*100)/cN.get(i);
+            System.out.print(" | " + cN.get(i) + " | " + cA.get(i) + " | " + a + "%" );
+            System.out.println();
         }
     }
 
@@ -23,6 +57,7 @@ public class Main {
         System.out.println("Computer: Lets fun! Are you ready? y/n");
         if(sc.nextLine().equals("n")) {
             System.out.println("Computer: Fuck you, bitch");
+            Thread.sleep(2000);
             return;
         }
 
@@ -53,7 +88,7 @@ public class Main {
         }
 
         outResult(numbers, counterNumbers, counterAnswers);
-
+        sc.nextLine();
     }
 }
 
