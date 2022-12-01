@@ -22,7 +22,7 @@ public class Main {
             }
         }
     }
-
+    ////"mkdsfdsp mpoaposdmfe
     public static void outHelp(int lg){
         System.out.println("Список команд: h-help, g-games, e-esc, ");
     }
